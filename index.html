@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On Point Barbershop & Custom Print Shop — Sauk Village, IL</title>
+<meta name="description" content="Precision fades and custom-printed apparel under one roof. On Point Barbershop & Custom Print Shop, 1715 E Sauk Trail, Sauk Village, IL. Walk-ins welcome.">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;800&family=Big+Shoulders:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d0d0d;
+  --charcoal:#1a1a1a;
+  --char2:#232323;
+  --steel:#8f8f8f;
+  --paper:#eceae4;
+  --orange:#ff5c1f;
+  --orange-dk:#e04a12;
+  --stencil:"Big Shoulders Stencil","Big Shoulders",sans-serif;
+  --cond:"Big Shoulders",sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--body);
+  font-size:1rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* grain texture */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection{background:var(--orange);color:var(--ink)}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--stencil);text-transform:uppercase;line-height:.95;letter-spacing:.01em}
+.eyebrow{
+  font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.28em;
+  font-size:.8rem;color:var(--orange);display:inline-flex;align-items:center;gap:.6rem;
+}
+.eyebrow::before{content:"";width:2rem;height:2px;background:var(--orange)}
+/* ---------- NAV ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,13,13,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid #2c2c2c;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;max-width:1200px;margin:0 auto}
+.logo{font-family:var(--stencil);font-weight:800;text-transform:uppercase;font-size:1.15rem;text-decoration:none;line-height:1;letter-spacing:.02em}
+.logo span{color:var(--orange)}
+.nav ul{display:none;list-style:none;gap:1.75rem}
+.nav ul a{
+  text-decoration:none;font-family:var(--cond);font-weight:700;text-transform:uppercase;
+  letter-spacing:.14em;font-size:.85rem;color:var(--paper);transition:color .2s;
+}
+.nav ul a:hover{color:var(--orange)}
+.nav-cta{
+  font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.1em;
+  text-decoration:none;background:var(--orange);color:var(--ink);
+  padding:.55rem .95rem;font-size:.85rem;transition:background .2s;
+  clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);
+}
+.nav-cta:hover{background:var(--paper)}
+@media(min-width:820px){.nav ul{display:flex}}
+/* ---------- HERO : diagonal cape split ---------- */
+.hero{position:relative;min-height:92vh;display:grid;overflow:hidden}
+.hero-panel{position:relative;padding:4rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
+.hero-barber{
+  background:linear-gradient(160deg,#181818,#0d0d0d);
+  clip-path:polygon(0 0,100% 0,100% 82%,0 100%);
+  padding-bottom:6rem;
+}
+.hero-print{
+  background:linear-gradient(200deg,var(--orange),var(--orange-dk));
+  color:var(--ink);
+  clip-path:polygon(0 18%,100% 0,100% 100%,0 100%);
+  margin-top:-14vw;padding-top:7rem;
+}
+.hero-tag{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.3em;font-size:.78rem;margin-bottom:1rem}
+.hero-barber .hero-tag{color:var(--orange)}
+.hero h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:800}
+.hero-print h1{-webkit-text-stroke:0;color:var(--ink)}
+.hero-panel p{max-width:34ch;margin-top:1.1rem;font-size:1.02rem}
+.hero-barber p{color:#b9b7b1}
+.hero-print p{color:#2a1408;font-weight:500}
+.hero-icon{position:absolute;right:1.25rem;top:2.25rem;width:56px;opacity:.85}
+.hero-print .hero-icon{top:auto;bottom:2.25rem}
+/* halftone dots on print panel */
+.hero-print::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;
+  background-image:radial-gradient(#0d0d0d 1.3px,transparent 1.3px);
+  background-size:14px 14px;
+}
+.hero-print>*{position:relative;z-index:2}
+.hero-seam{
+  position:absolute;left:-5%;right:-5%;z-index:5;height:3px;background:var(--paper);
+  top:50%;transform:rotate(-9deg);display:none;
+}
+@media(min-width:900px){
+  .hero{grid-template-columns:1fr 1fr;min-height:88vh}
+  .hero-barber{clip-path:polygon(0 0,100% 0,72% 100%,0 100%);padding:5rem 3rem;padding-right:22%}
+  .hero-print{clip-path:polygon(28% 0,100% 0,100% 100%,0 100%);margin:0;margin-left:-24%;padding:5rem 3rem;padding-left:26%;align-items:flex-end;text-align:right}
+  .hero-print p{margin-left:auto}
+  .hero-print .hero-icon{left:32%;right:auto;bottom:3rem}
+  .hero h1{font-size:clamp(3.5rem,6.5vw,6.8rem)}
+}
+.hero-banner{
+  position:relative;z-index:6;background:var(--charcoal);border-top:1px solid #2e2e2e;border-bottom:1px solid #2e2e2e;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem 2.5rem;
+  padding:1.1rem 1.25rem;text-align:center;
+}
+.hero-banner strong{font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:1.05rem}
+.hero-banner .dot{color:var(--orange)}
+.btn{
+  display:inline-block;text-decoration:none;font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  letter-spacing:.12em;font-size:1rem;padding:.85rem 1.6rem;margin-top:1.6rem;transition:.2s;
+  clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%);
+}
+.btn-orange{background:var(--orange);color:var(--ink)}
+.btn-orange:hover{background:var(--paper)}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{background:#2b2b2b}
+.btn-ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 2px var(--paper);clip-path:none}
+.btn-ghost:hover{background:var(--paper);color:var(--ink)}
+/* ---------- MARQUEE ---------- */
+.marquee{overflow:hidden;background:var(--ink);border-bottom:1px solid #2c2c2c;padding:.9rem 0;white-space:nowrap}
+.marquee-track{display:inline-block;animation:scroll 26s linear infinite}
+.marquee span{
+  font-family:var(--stencil);font-weight:800;text-transform:uppercase;font-size:1.4rem;
+  color:transparent;-webkit-text-stroke:1px #4a4a4a;margin:0 1.4rem;
+}
+.marquee span:nth-child(odd){color:var(--orange);-webkit-text-stroke:0}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+/* ---------- SECTIONS ---------- */
+section{padding:5rem 0}
+.sec-head{margin-bottom:3rem}
+.sec-head h2{font-size:clamp(2.4rem,6vw,4.2rem);margin-top:.75rem}
+.sec-head p{max-width:60ch;color:#b9b7b1;margin-top:1rem}
+/* two crafts */
+.crafts{display:grid;gap:2px;background:#2c2c2c}
+.craft{background:var(--charcoal);padding:2.5rem 1.75rem;position:relative;transition:background .3s}
+.craft:hover{background:var(--char2)}
+.craft h3{font-size:1.9rem;margin:1rem 0 .5rem}
+.craft .num{font-family:var(--stencil);font-weight:800;font-size:1rem;color:var(--orange);letter-spacing:.15em}
+.craft ul{list-style:none;margin-top:1.5rem}
+.craft li{
+  padding:.9rem 0;border-top:1px solid #2e2e2e;display:flex;justify-content:space-between;gap:1rem;
+  font-weight:500;
+}
+.craft li em{font-style:normal;color:var(--steel);font-size:.85rem;text-align:right;flex-shrink:0;align-self:center}
+.craft li:hover{color:var(--orange)}
+.craft-svg{width:48px;color:var(--orange)}
+@media(min-width:820px){.crafts{grid-template-columns:1fr 1fr}.craft{padding:3rem 2.5rem}}
+/* diagonal divider strip */
+.strip{
+  background:var(--orange);color:var(--ink);padding:3.5rem 0;
+  clip-path:polygon(0 8%,100% 0,100% 92%,0 100%);
+}
+.strip .wrap{display:grid;gap:1.5rem}
+.strip h2{font-size:clamp(2rem,5vw,3.4rem);font-family:var(--stencil)}
+.strip p{max-width:56ch;font-weight:500}
+@media(min-width:820px){.strip .wrap{grid-template-columns:1.2fr 1fr;align-items:center}.strip .strip-cta{text-align:right}}
+/* ---------- HOW IT WORKS / PRINT ORDERS ---------- */
+.steps{display:grid;gap:1.5rem;counter-reset:step}
+.step{border:1px solid #2e2e2e;padding:1.75rem;position:relative;background:var(--charcoal)}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-family:var(--stencil);font-weight:800;font-size:2.4rem;color:transparent;
+  -webkit-text-stroke:1px var(--orange);display:block;margin-bottom:.75rem;line-height:1;
+}
+.step h3{font-family:var(--cond);font-size:1.25rem;letter-spacing:.05em;margin-bottom:.5rem}
+.step p{color:#b9b7b1;font-size:.95rem}
+@media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
+/* ---------- ABOUT ---------- */
+.about{background:var(--charcoal);border-top:1px solid #2c2c2c;border-bottom:1px solid #2c2c2c}
+.about-grid{display:grid;gap:2.5rem}
+.about-grid p{color:#c9c7c1;margin-bottom:1.1rem}
+.rating{
+  border:1px solid #3a3a3a;padding:1.75rem;background:var(--ink);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%);
+}
+.rating .big{font-family:var(--stencil);font-weight:800;font-size:3.4rem;color:var(--orange);line-height:1}
+.rating .stars{color:var(--orange);letter-spacing:.2em;font-size:1.1rem;margin:.4rem 0}
+.rating small{color:var(--steel)}
+@media(min-width:820px){.about-grid{grid-template-columns:1.4fr 1fr;align-items:start}}
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;gap:2.5rem}
+.contact-card{border-left:3px solid var(--orange);padding-left:1.25rem;margin-bottom:1.75rem}
+.contact-card .label{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.75rem;color:var(--steel);margin-bottom:.3rem}
+.contact-card a{font-family:var(--stencil);font-weight:800;font-size:clamp(1.4rem,4vw,2rem);text-decoration:none;line-height:1.1;transition:color .2s}
+.contact-card a:hover{color:var(--orange)}
+.contact-card address{font-style:normal;font-size:1.05rem;color:var(--paper)}
+.walkin{
+  background:var(--char2);border:1px dashed #4a4a4a;padding:2rem;
+}
+.walkin h3{font-family:var(--cond);font-size:1.4rem;letter-spacing:.05em;margin-bottom:.75rem}
+.walkin p{color:#b9b7b1;font-size:.95rem;margin-bottom:1rem}
+@media(min-width:820px){.contact-grid{grid-template-columns:1fr 1fr;align-items:start}}
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid #2c2c2c;padding:2.5rem 0 2rem;background:var(--ink)}
+.foot{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--steel)}
+.foot .logo{font-size:1rem}
+.foot a{color:var(--steel)}
+/* ---------- scroll reveal (CSS only, progressive) ---------- */
+@supports(animation-timeline:view()){
+  .reveal{animation:rise both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.reveal{animation:none}}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top">On<span>Point</span></a>
+    <ul>
+      <li><a href="#crafts">Services</a></li>
+      <li><a href="#print">Custom Print</a></li>
+      <li><a href="#about">The Shop</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+17082486593">Call · Text</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO : diagonal cape split -->
+<div class="hero" aria-label="Two crafts, one shop">
+  <div class="hero-panel hero-barber">
+    <svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="#ff5c1f" stroke-width="1.5" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 8.5 20 20M8.5 15.5 20 4M14 12l1.5 1.5"/></svg>
+    <p class="hero-tag">The Chair</p>
+    <h1>Fresh<br>Fades</h1>
+    <p>Sharp, consistent cuts and clean lineups from a neighborhood shop Sauk Village keeps coming back to. Walk in, sit down, leave right.</p>
+    <a class="btn btn-orange" href="tel:+17082486593">Book a Cut</a>
+  </div>
+  <div class="hero-panel hero-print">
+    <svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="#0d0d0d" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16v6H4zM4 10l-1 8h18l-1-8M8 18v3h8v-3"/><path d="M8 7h8"/></svg>
+    <p class="hero-tag">The Press</p>
+    <h1>Fresh<br>Prints</h1>
+    <p>Custom shirts, hats, and merch pressed on-site. Your name, your team, your brand — printed where you get your cut.</p>
+    <a class="btn btn-dark" href="#print">Start a Print Order</a>
+  </div>
+</div>
+
+<div class="hero-banner">
+  <strong>Two Crafts <span class="dot">◆</span> One Shop</strong>
+  <span>1715 E Sauk Trail, Sauk Village, IL</span>
+  <strong><span class="dot">★</span> 4.3 · 37 Google reviews</strong>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Fades</span><span>Lineups</span><span>Beards</span><span>Tees</span><span>Hats</span><span>Team Merch</span><span>Walk-Ins</span><span>Sauk Village</span>
+    <span>Fades</span><span>Lineups</span><span>Beards</span><span>Tees</span><span>Hats</span><span>Team Merch</span><span>Walk-Ins</span><span>Sauk Village</span>
+  </div>
+</div>
+
+<!-- SERVICES : two crafts -->
+<section id="crafts">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>Blade & Ink,<br>Side by Side</h2>
+      <p>Most shops do one thing. We built two crafts under one roof — the barber chair on one side, the print press on the other. Get faded up and walk out repping your own brand.</p>
+    </div>
+    <div class="crafts">
+      <article class="craft reveal">
+        <svg class="craft-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 3v13M11 3v13M7 8h4M5 16h8v3a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM11 3l8 8M11 8l6 6"/></svg>
+        <p class="num">Craft 01 — The Chair</p>
+        <h3>Barbering</h3>
+        <ul>
+          <li>Haircuts &amp; fades <em>sharp, consistent, every visit</em></li>
+          <li>Beard grooming &amp; lineups <em>crisp edges, clean shape</em></li>
+          <li>Kids &amp; family cuts <em>the whole crew, one chair</em></li>
+          <li>Walk-ins welcome <em>call or text ahead to skip the wait</em></li>
+        </ul>
+        <a class="btn btn-orange" href="tel:+17082486593">Call for a Cut</a>
+      </article>
+      <article class="craft reveal">
+        <svg class="craft-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.4 7 12 12 3.6 7 12 2zM3.6 7v3L12 15l8.4-5V7M12 15v7"/></svg>
+        <p class="num">Craft 02 — The Press</p>
+        <h3>Custom Print</h3>
+        <ul>
+          <li>Custom apparel printing <em>tees, hoodies, streetwear</em></li>
+          <li>Custom hats &amp; merch <em>your logo, pressed on-site</em></li>
+          <li>Group &amp; team orders <em>teams, churches, businesses</em></li>
+          <li>Event runs <em>reunions, memorials, fundraisers</em></li>
+        </ul>
+        <a class="btn btn-orange" href="tel:+17082486593">Get a Print Quote</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ORANGE STRIP -->
+<div class="strip" id="print">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Your Brand, Pressed While You're in the Chair</h2>
+      <p>Personalized streetwear and merch is our edge. Bring us a design, a logo, or just an idea — we'll help you get it on a shirt or a hat, printed right here in the shop. No middleman, no shipping wait.</p>
+    </div>
+    <div class="strip-cta reveal">
+      <a class="btn btn-dark" href="sms:+17082486593">Text Us Your Idea</a>
+    </div>
+  </div>
+</div>
+
+<!-- HOW A PRINT ORDER WORKS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Print Orders</span>
+      <h2>From Idea to Ink</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Bring the Idea</h3>
+        <p>Call, text, or walk in with your design, logo, team name, or just a concept. Solo piece or a full group run — we handle both.</p>
+      </div>
+      <div class="step reveal">
+        <h3>We Set It Up</h3>
+        <p>We work out sizes, colors, quantities, and pricing with you face to face. Local teams, churches, and small businesses are our regulars.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Pressed On-Site</h3>
+        <p>Your order gets printed right here in the shop. Pick it up in person — maybe grab a fade while you're at it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="eyebrow">The Shop</span>
+      <h2 style="font-size:clamp(2.2rem,5.5vw,3.6rem);margin:.75rem 0 1.5rem">Hometown Hustle, On Sauk Trail</h2>
+      <p>On Point isn't a franchise salon — it's a neighborhood shop in Sauk Village where the barber chair and the print press sit side by side. That combination didn't come from a business plan; it came from doing two things well and doing them for the same community.</p>
+      <p>Men and families from across the south suburbs come through for reliable, sharp cuts. Local teams, churches, and small businesses come through for custom-printed gear. A lot of folks come through for both — because when your barber can also print your brand, one stop covers looking sharp and repping yours.</p>
+      <p>Walk-in friendly. Community-rooted. Built on repeat local trust, one cut and one print run at a time.</p>
+    </div>
+    <div class="rating reveal" aria-label="Google rating">
+      <p class="big">4.3</p>
+      <p class="stars" aria-hidden="true">★★★★☆</p>
+      <p style="font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.1em">Google Rating</p>
+      <small>Based on 37 reviews from Sauk Village &amp; south Chicagoland neighbors.</small>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT / CONTACT -->
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Pull Up</span>
+      <h2>Book a Cut or<br>Start an Order</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-card">
+          <p class="label">Call or Text</p>
+          <a href="tel:+17082486593">(708) 248-6593</a>
+        </div>
+        <div class="contact-card">
+          <p class="label">Find the Shop</p>
+          <address>1715 E Sauk Trail<br>Sauk Village, IL 60411</address>
+        </div>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=On+Point+Barbershop+and+Custom+Print+Shop+1715+E+Sauk+Trail+Sauk+Village+IL+60411" rel="noopener">Get Directions</a>
+      </div>
+      <div class="walkin reveal">
+        <h3>Walk-Ins Welcome</h3>
+        <p>No app, no account, no hassle. Walk in for a cut, or call/text ahead to lock in a time. For print orders, reach out with your design or idea and we'll talk sizes, quantities, and pricing.</p>
+        <p style="margin-bottom:0"><strong style="color:var(--paper)">Cuts:</strong> call or come through.<br><strong style="color:var(--paper)">Prints:</strong> text your idea to get started.</p>
+        <a class="btn btn-orange" href="tel:+17082486593" style="margin-top:1.4rem">Call the Shop</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top">On<span>Point</span> Barbershop &amp; Custom Print Shop</a>
+    <p>1715 E Sauk Trail, Sauk Village, IL 60411 · <a href="tel:+17082486593">(708) 248-6593</a></p>
+    <p>© 2026 On Point Barbershop &amp; Custom Print Shop · Website sample by Wild Card Creative Co</p>
+  </div>
+</footer>
+
+</body>
+</html>
